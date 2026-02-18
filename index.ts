@@ -1,10 +1,10 @@
 import { ConsoleAdapter } from "./src/infrastructure/adapter/in/console.adapter";
 import DataAdapter from "./src/infrastructure/adapter/out/data.adapter";
-import CsvRepository from "./src/infrastructure/repositories/csv/csv.repository";
+import CsvStrategy from "./src/infrastructure/adapter/out/data/strategy/csv/csv.strategy";
 import MatchService from "./src/application/services/match.service";
 
-const matchRepository = new CsvRepository();
-const matchRepositoryAdapter = new DataAdapter(matchRepository);
+const matchStrategy = new CsvStrategy();
+const matchRepositoryAdapter = new DataAdapter(matchStrategy);
 
 
 const matchService = new MatchService(matchRepositoryAdapter);

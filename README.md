@@ -1,15 +1,18 @@
-# my-app
-
-To install dependencies:
+# Projet calcul de recommandation TRD avec Clean architecture
 
 ```bash
 bun install
 ```
 
-To run:
-
+Pour démarrer:
 ```bash
 bun run index.ts
+```
+
+Pour démarrer avec docker et strategy mongodb
+
+```bash
+docker compose up --build
 ```
 
 ![Image](Schema_Architecture/CleanArchitecture.png)

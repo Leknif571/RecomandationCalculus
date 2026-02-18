@@ -1,15 +1,14 @@
-import  { MatchDto } from "../../../application/dtos/match.dto";
-import type { RepositoryInterface } from "../interface.repository";
+import { MatchDto } from "../../../../../../application/dtos/match.dto";
+import type { StrategyInterface } from "../interface.strategy";
 
 
-export default class CsvRepository implements RepositoryInterface{
+export default class CsvStrategy implements StrategyInterface{
 
     async loadData(): Promise<MatchDto[]> {
 
         let matches : MatchDto[] = []
         const file = Bun.file("C:/Users/delit/Documents/CalculusRecommandation/data.csv");
         const text = await file.text();
-            
         const lines = text.split('\n');
 
         matches = lines.slice(1)

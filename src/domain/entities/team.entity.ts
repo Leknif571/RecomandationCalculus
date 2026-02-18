@@ -2,39 +2,45 @@ import type { Match } from "./match.entity";
 
 export class Team {
   constructor(
-    public readonly id : number,
+    public readonly id: number,
     public readonly name: string,
-    public readonly nbVictory : number,
-    public readonly nbDefeat : number,
-    public readonly nbDraw : number,
-    public readonly matchs : Match[],
+    public readonly matches: Match[],
   ) {}
 
 
-    victories():Array<Match> { 
-      let listMatchWin = this.matchs.filter((match => {match.homeScore > match.awayScore}))
-      return listMatchWin;
-    }
+  victories(): Match[] {
+    return this.matches.filter(match => match.isWonBy(this.name));
+  }
 
-    defeats():Array<Match> {
-      let listMatchDefeat = this.matchs.filter((match => {match.homeScore < match.awayScore}))
-      return listMatchDefeat;
-    }
+  defeats(): Match[] {
+    return this.matches.filter(match => !match.isDraw() && !match.isWonBy(this.name));
+  }
 
-    draws():Array<Match> {
-      let listMatchDefeat = this.matchs.filter((match => {match.homeScore == match.awayScore}))
-      return listMatchDefeat;
-    }
+  draws(): Match[] {
+    return this.matches.filter(match => match.isDraw());
+  }
 
-    // victoriesRate(): number  {
+  victoriesRate(): number {
+    if (this.matches.length === 0) return 0;
+    return (this.victories().length / this.matches.length) * 100;
+  }
 
-    // }
+  goalsScored(): number {
+    return this.matches.reduce((total, match) => {
+      const isHome = match.homeTeam.toLowerCase() === this.name.toLowerCase();
+      return total + (isHome ? match.homeScore : match.awayScore);
+    }, 0);
+  }
 
-    // goalsScored():number {
+  goalsConceded(): number {
+    return this.matches.reduce((total, match) => {
+      const isHome = match.homeTeam.toLowerCase() === this.name.toLowerCase();
+      return total + (isHome ? match.awayScore : match.homeScore);
+    }, 0);
+  }
 
-    // } 
-    // goalsConceded():number {
 
-    // }
+  goalDifference(): number {
+    return this.goalsScored() - this.goalsConceded();
+  }
 }
-
