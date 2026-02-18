@@ -12,4 +12,4 @@ To run:
 bun run index.ts
 ```
 
-![Image](.Schema_Architecture/CleanArchitecture.png)
+![Image](Schema_Architecture/CleanArchitecture.png)
