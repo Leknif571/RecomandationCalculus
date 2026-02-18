@@ -20,18 +20,10 @@ docker compose up --build
 
 ## Réponse aux questions
 
-5. Entre la France et l'Italie, laquelle encaisse le moins de buts à domicile ? 
-6. Entre l'Espagne et le Portugal, laquelle a le plus grand nombre de matchs nuls 
-à l'extérieur ? 
-7. Quelle équipe possède le meilleur taux de victoire à domicile parmi les 
-équipes suivantes : France, Brésil, Allemagne, Argentine ? 
+
 8. Quelle équipe a la plus grande différence entre ses buts marqués à domicile 
 et ses buts marqués à l'extérieur (c'est-à-dire, la plus "dépendante" de la 
 localisation du match) ? 
-9. Existe-t-il une équipe parmi France, Brésil, Angleterre, Italie qui gagne plus 
-souvent à l'extérieur qu'à domicile ? 
-10. Quelle équipe a le ratio buts marqués / buts encaissés le plus élevé à 
-l'extérieur parmi : France, Allemagne, Brésil, Argentine ? 
 11. Quel est le nombre de défaites à domicile du Brésil ? Ce chiffre est-il cohérent 
 avec son taux de victoire à domicile et son nombre de nuls à domicile ?
 
@@ -39,13 +31,13 @@ avec son taux de victoire à domicile et son nombre de nuls à domicile ?
 2) Domicile Buts Marqués : 2293 (Dom: 1498 / Ext: 795)
 3) Taux Victoire Global : 57.94%, Victoires à Domicile : 342, Victoires à l'Extérieur : 253
 4) Taux Victoire Global : 55.18% Victoires à Domicile : 402 Victoires à l'Extérieur : 184
-5)
-6)
-7)
-8)
-9)
-10)
-11)
+5) France : Buts Encaissés : 1204 (Dom: 585 / Ext: 619), Italie : Buts Encaissés : 875 (Dom: 394 / Ext: 481) donc Italie
+6) Espagne : Matchs Nuls : 180, Portugal : Matchs Nuls : 158
+7) Brésil
+8) /
+9) Angleterre
+10) Brésil
+11) 60 et oui c'est cohérant
 
 
 ## Ce que je n'ai pas fini :

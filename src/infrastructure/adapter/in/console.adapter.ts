@@ -57,16 +57,16 @@ export class ConsoleAdapter {
     const homeMatches = team.matches.filter((m: any) => m.homeTeam.toLowerCase() === team.name.toLowerCase());
     const awayMatches = team.matches.filter((m: any) => m.awayTeam.toLowerCase() === team.name.toLowerCase());
 
-    console.log(`1. Total Matchs : ${team.matches.length} (Dom: ${homeMatches.length} / Ext: ${awayMatches.length})`);
+    console.log(`Total Matchs : ${team.matches.length} (Dom: ${homeMatches.length} / Ext: ${awayMatches.length})`);
     
-    console.log(`2/5. Buts Marqués : ${team.goalsScored()} (Dom: ${this.sumGoals(homeMatches, 'home')} / Ext: ${this.sumGoals(awayMatches, 'away')})`);
+    console.log(`   Buts Marqués : ${team.goalsScored()} (Dom: ${this.sumGoals(homeMatches, 'home')} / Ext: ${this.sumGoals(awayMatches, 'away')})`);
     console.log(`   Buts Encaissés : ${team.goalsConceded()} (Dom: ${this.sumGoals(homeMatches, 'away')} / Ext: ${this.sumGoals(awayMatches, 'home')})`);
 
-    console.log(`3/4/7/9. Taux Victoire Global : ${team.victoriesRate().toFixed(2)}%`);
+    console.log(`Taux Victoire Global : ${team.victoriesRate().toFixed(2)}%`);
     console.log(`   Victoires à Domicile : ${team.victories().filter((m: any) => m.homeTeam.toLowerCase() === team.name.toLowerCase()).length}`);
     console.log(`   Victoires à l'Extérieur : ${team.victories().filter((m: any) => m.awayTeam.toLowerCase() === team.name.toLowerCase()).length}`);
 
-    console.log(`6/11. Matchs Nuls : ${team.draws().length}`);
+    console.log(`Matchs Nuls : ${team.draws().length}`);
     console.log(`    Défaites à Domicile : ${team.defeats().filter((m: any) => m.homeTeam.toLowerCase() === team.name.toLowerCase()).length}`);
     
   }
