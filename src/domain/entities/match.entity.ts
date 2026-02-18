@@ -42,5 +42,9 @@ export class Match {
     );
   }
 
+  playedAtHome(teamName:string):boolean {
+    return this.homeTeam.toLowerCase() === teamName.toLowerCase();
+  }
+
 }
 

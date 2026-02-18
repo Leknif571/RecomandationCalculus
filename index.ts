@@ -8,6 +8,9 @@ const matchRepositoryAdapter = new DataAdapter(matchStrategy);
 
 
 const matchService = new MatchService(matchRepositoryAdapter);
+
+// console.log(teamMatches);
+
 const cli = new ConsoleAdapter(matchService);
 
 cli.start();

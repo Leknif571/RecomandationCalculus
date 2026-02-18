@@ -39,8 +39,16 @@ export class Team {
     }, 0);
   }
 
-
   goalDifference(): number {
     return this.goalsScored() - this.goalsConceded();
   }
+
+  homeMatchs():Array<Match> {
+    return this.matches.filter((match) => match.playedAtHome(this.name) === true);
+  }
+  
+  awayMatch():Array<Match> {
+    return this.matches.filter((match) => match.playedAtHome(this.name) === false);
+  }
+
 }
