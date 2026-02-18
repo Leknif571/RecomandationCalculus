@@ -12,29 +12,35 @@ export class Match {
   ) {}
 
 
-    totalGoals():number {
-      return 0;
-    }
+  totalGoals(): number {
+    return this.homeScore + this.awayScore;
+  }
 
-    isDraw():boolean {
-      return false;
-    }
+  isDraw(): boolean {
+    return this.homeScore === this.awayScore;
+  }
 
-    winner():string {
-      return "";
-    }
+  winner(): string {
+    if (this.isDraw()) return "None";
+    return this.homeScore > this.awayScore ? this.homeTeam : this.awayTeam;
+  }
 
-    loser():string {
-      return "";
-    }
+  loser(): string {
+    if (this.isDraw()) return "None";
+    return this.homeScore < this.awayScore ? this.homeTeam : this.awayTeam;
+  }
 
-    isWonBy(teamName:string):boolean {
-      return false;
-    }
+  isWonBy(teamName: string): boolean {
+    return this.winner().toLowerCase() === teamName.toLowerCase();
+  }
 
-    involves(teamName: string): boolean{
-      return false;
-    }
+  involves(teamName: string): boolean {
+    const nameLower = teamName.toLowerCase();
+    return (
+      this.homeTeam.toLowerCase() === nameLower ||
+      this.awayTeam.toLowerCase() === nameLower
+    );
+  }
 
 }
 
