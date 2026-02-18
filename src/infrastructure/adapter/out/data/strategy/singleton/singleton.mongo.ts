@@ -1,4 +1,4 @@
-import mongoose, { ConnectOptions } from "mongoose";
+import mongoose, { type ConnectOptions } from "mongoose";
 
 export default class SingletonMongo {
     private static _instance: SingletonMongo;
